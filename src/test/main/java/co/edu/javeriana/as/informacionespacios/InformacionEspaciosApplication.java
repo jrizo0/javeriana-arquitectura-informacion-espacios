@@ -1,13 +1,13 @@
-package co.edu.javeriana.as.perfilespacios;
+package co.edu.javeriana.as.informacionespacios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PerfilespaciosApplication {
+public class InformacionEspaciosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PerfilespaciosApplication.class, args);
+		SpringApplication.run(InformacionEspaciosApplication.class, args);
 	}
 
 }

@@ -13,13 +13,13 @@ public class EdificiosController {
     @Autowired
     private EdificiosService edificiosService;
 
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<String> getEdificios() {
         return new ResponseEntity<>(edificiosService.getEdificios().toString(), new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping
-    public ResponseEntity<String> getEdificios(@RequestParam int idEdificio) {
+    @GetMapping("/get/{idEdificio}")
+    public ResponseEntity<String> getEdificio(@PathVariable int idEdificio) {
         try {
             return new ResponseEntity<>(edificiosService.getEdificio(idEdificio).toString(), new HttpHeaders(), HttpStatus.OK);
         }catch (Exception e){
@@ -27,8 +27,8 @@ public class EdificiosController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<String> addEdificio(@RequestParam int numero, @RequestParam String nombre){
+    @PostMapping("/add/{numero}/{nombre}")
+    public ResponseEntity<String> addEdificio(@PathVariable int numero, @PathVariable String nombre){
         try{
             return new ResponseEntity<>(edificiosService.addEdificio(numero, nombre).toString(), new HttpHeaders(), HttpStatus.OK);
         }catch (Exception e){
@@ -36,8 +36,8 @@ public class EdificiosController {
         }
     }
 
-    @PutMapping
-    public ResponseEntity<String> updateEdificio(@RequestParam int id, @RequestParam int numero, @RequestParam String nombre){
+    @PutMapping("/update/{id}/{numero}/{nombre}")
+    public ResponseEntity<String> updateEdificio(@PathVariable int id, @PathVariable int numero, @PathVariable String nombre){
         try{
             return new ResponseEntity<>(edificiosService.updateEdificio(id, numero, nombre).toString(), new HttpHeaders(), HttpStatus.OK);
         }catch (Exception e){
@@ -46,8 +46,8 @@ public class EdificiosController {
 
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> deleteEdificio(@RequestParam int id) {
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteEdificio(@PathVariable int id) {
         try{
             edificiosService.deleteEdificio(id);
             return new ResponseEntity<>("Se eliminó el edificio con id: " + id, new HttpHeaders(), HttpStatus.OK);

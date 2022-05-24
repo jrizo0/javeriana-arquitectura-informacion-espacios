@@ -1,4 +1,4 @@
-package co.edu.javeriana.as.perfilespacios;
+package co.edu.javeriana.as.informacionespacios;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

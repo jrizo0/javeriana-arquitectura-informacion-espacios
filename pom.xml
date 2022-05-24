@@ -73,7 +73,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+					<configuration>
 					<mainClass>co.edu.javeriana.as.InformacionEspaciosApplication</mainClass>
 				</configuration>
 			</plugin>
