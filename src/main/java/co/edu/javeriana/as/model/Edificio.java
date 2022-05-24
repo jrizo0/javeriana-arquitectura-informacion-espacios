@@ -37,5 +37,13 @@ public class Edificio {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Edificio{" +
+				"id_edificio=" + id_edificio +
+				", numero=" + numero +
+				", nombre='" + nombre + '\'' +
+				'}';
+	}
 }
