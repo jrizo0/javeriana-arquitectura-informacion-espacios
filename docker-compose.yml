@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  app:
+    image: 'informacionespacios:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: informacionespacios
+    depends_on:
+      - db
+    ports:
+      - '8080:8080'
+
+  db:
+    image: 'postgres'
+    container_name: postgresinfoespacios
+    command: postgres -c config_file=D:\Programas\PostgreSQL\data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=julianrr
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
