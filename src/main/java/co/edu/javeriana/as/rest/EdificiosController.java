@@ -13,6 +13,11 @@ public class EdificiosController {
     @Autowired
     private EdificiosService edificiosService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> hola() {
+        return new ResponseEntity<>("test ok", new HttpHeaders(), HttpStatus.OK);
+    }
+
     @GetMapping("/get")
     public ResponseEntity<String> getEdificios() {
         return new ResponseEntity<>(edificiosService.getEdificios().toString(), new HttpHeaders(), HttpStatus.OK);
