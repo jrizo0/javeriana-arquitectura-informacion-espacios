@@ -8,10 +8,11 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+
 @EntityScan("com.jpa.model")
 @ComponentScan({"com.http.requests", "com.services"})
 @EnableJpaRepositories("com.jpa.queries")
+@SpringBootApplication
 public class InformacionEspaciosApplication extends SpringBootServletInitializer {
 
     @Override
