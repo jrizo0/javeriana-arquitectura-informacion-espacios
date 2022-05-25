@@ -16,32 +16,47 @@ import java.util.List;
 public class EspaciosServiceImpl implements EspaciosService {
 	
 	@Autowired
-	EspaciosRepository espaciosRepository ;
-	@Autowired
-	EdificiosRepository edificiosRepository ;
+	EspaciosRepository infoespaciosRepository ;
+	
+	@Override
+	public List<Espacio> findAll() {
+		// TODO Auto-generated method stub
+		return infoespaciosRepository.findAll();
+	}
+	
+	
 
 	@Override
-	public List<Espacio> getEspacios() {
+	public List<Espacio> maxcapacidad(int x) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
+
+
 	@Override
-	public Espacio getEspacio(int idEspacio) throws EspacioNotFoundException {
-		return null;
+	public Espacio update(Espacio x) {
+		Espacio esp=infoespaciosRepository.findById(x.getId_espacio()).orElseThrow(() -> 
+		new EspacioNotFoundException(x.getId_espacio()));
+		return infoespaciosRepository.save(esp);
+		
 	}
 
-	@Override
-	public void addEspacio(int idEspacio, String nombre, String descripcion, int capacidad, int idEdificio) throws EdificioNotFoundException {
 
+
+	@Override
+	public boolean Delete(Espacio x) {
+	infoespaciosRepository.deleteById(x.getId_espacio());
+	
+		return true;
 	}
 
-	@Override
-	public void updateEspacio(int idEspacio, String nombre, String descripcion, int capacidad, int idEdificio) throws EspacioNotFoundException {
 
-	}
 
 	@Override
-	public void deleteEspacio(int idEspacio) throws EspacioNotFoundException {
-
+	public boolean Create(Espacio x) {
+		infoespaciosRepository.save(x);
+		return true;
+		
 	}
 }
