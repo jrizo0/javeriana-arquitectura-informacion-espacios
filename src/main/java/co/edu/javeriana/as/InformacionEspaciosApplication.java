@@ -9,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan("com.jpa.model")
-@ComponentScan({"com.http.requests", "com.services"})
-@EnableJpaRepositories("com.jpa.queries")
+@EntityScan("co.edu.javeriana.as.model")
+@ComponentScan({"co.edu.javeriana.as.rest", "co.edu.javeriana.as.services", "co.edu.javeriana.as.configuration"})
+@EnableJpaRepositories("co.edu.javeriana.as.repository")
 public class InformacionEspaciosApplication extends SpringBootServletInitializer {
 
     @Override
@@ -22,4 +22,5 @@ public class InformacionEspaciosApplication extends SpringBootServletInitializer
     public static void main(String[] args) {
         SpringApplication.run(InformacionEspaciosApplication.class, args);
     }
+
 }

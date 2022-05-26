@@ -6,11 +6,13 @@ import co.edu.javeriana.as.repository.EdificiosRepository;
 import co.edu.javeriana.as.repository.EspaciosRepository;
 import co.edu.javeriana.as.services.EdificiosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class EdificiosServiceImpl implements EdificiosService {
 
     @Autowired
