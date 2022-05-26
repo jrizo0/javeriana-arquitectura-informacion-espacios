@@ -91,7 +91,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>webapp</finalName>
+<!--		<finalName>webapp</finalName>-->
 	</build>
 
 </project>
